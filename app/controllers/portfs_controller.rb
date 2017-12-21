@@ -1,0 +1,2 @@
+class PortfsController < ApplicationController
+end

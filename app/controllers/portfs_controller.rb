@@ -30,4 +30,9 @@ def update
     end
   end
 end
+
+def show
+  @portfolio_item = Portf.find(params[:id])
+
+end
 end

@@ -3,9 +3,10 @@
 <%= link_to "Create New Item",new_portf_url %>
 
 <% @portfolio_items.each do |portfolio_item| %>
+<p><%#= link_to portfolio_item.title, portf_path(portfolio_item)%></p>
 <p><%= portfolio_item.title %></p>
 <p><%= portfolio_item.subtitle %></p>
 <p><%= portfolio_item.body %></p>
 <%= image_tag portfolio_item.thumn_image unless portfolio_item.thumn_image.nil? %>
-<%= link_to "Edit",edit_portf_path(portfolio_item.id) %>
+<%= link_to "Edit",edit_portf_path(portfolio_item) %>
 <% end %>

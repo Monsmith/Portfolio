@@ -16,4 +16,18 @@ def create
     end
   end
 end
+def edit
+  @portfolio_item = Portf.find(params[:id])
+end
+def update
+  @portfolio_item = Portf.find(params[:id])
+
+  respond_to do |format|
+    if @portfolio_item.update(params.require(:portf).permit(:title, :subtitle, :body))
+      format.html { redirect_to portfs_path, notice: 'Blog was successfully updated.' }
+    else
+      format.html { render :edit }
+    end
+  end
+end
 end

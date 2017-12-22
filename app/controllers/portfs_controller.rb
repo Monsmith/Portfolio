@@ -24,7 +24,7 @@ def update
 
   respond_to do |format|
     if @portfolio_item.update(params.require(:portf).permit(:title, :subtitle, :body))
-      format.html { redirect_to portfs_path, notice: 'Blog was successfully updated.' }
+      format.html { redirect_to portfs_path, notice: 'Record was  updated.' }
     else
       format.html { render :edit }
     end
@@ -32,7 +32,16 @@ def update
 end
 
 def show
-  @portfolio_item = Portf.find(params[:id])
+   @portfolio_item = Portf.find(params[:id])
+ end
 
+def destroy
+#Perform the lookup
+  @portfolio_item = Portf.find(params[:id])
+  @portfolio_item.destroy
+#Redirect
+  respond_to do |format|
+    format.html { redirect_to portfs_url, notice: 'Record was removed.' }
+  end
 end
 end

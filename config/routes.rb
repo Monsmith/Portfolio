@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :portfs
+  resources :portfs, except: [:show]
+  get 'portf/:id', to: 'portfs#show', as: 'portf_show'
 
 
   get 'aboutme', to: 'pages#about'

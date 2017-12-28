@@ -1,4 +1,5 @@
 class Portf < ApplicationRecord
+  has_many :technologies
   include Placeholder
   validates_presence_of :title, :body, :main_image, :thumn_image
 

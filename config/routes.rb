@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :portfs, except: [:show]
   get 'portf/:id', to: 'portfs#show', as: 'portf_show'
 

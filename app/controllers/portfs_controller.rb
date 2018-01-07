@@ -7,8 +7,7 @@ def new
   3.times{@portfolio_item.technologies.build}
 end
 def create
-    @portfolio_item = Portf.new(params.require(:portf).permit(:title, :subtitle,:body,
-    technologies_attributes:[:name]))
+    @portfolio_item = Portf.new(portf_params)
 
   respond_to do |format|
     if @portfolio_item.save
@@ -25,7 +24,7 @@ def update
   @portfolio_item = Portf.find(params[:id])
 
   respond_to do |format|
-    if @portfolio_item.update(params.require(:portf).permit(:title, :subtitle, :body))
+    if @portfolio_item.update(portf_params)
       format.html { redirect_to portfs_path, notice: 'Record was  updated.' }
     else
       format.html { render :edit }
@@ -45,5 +44,12 @@ def destroy
   respond_to do |format|
     format.html { redirect_to portfs_url, notice: 'Record was removed.' }
   end
+end
+
+private
+def portf_params
+  params.require(:portf).permit(:title,
+                                :subtitle,:body,
+                                technologies_attributes:[:name])
 end
 end

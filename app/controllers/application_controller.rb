@@ -3,4 +3,8 @@ class ApplicationController < ActionController::Base
   include DeviseWhitelist
   include SetSource
 
+  def current_user
+  super
+  end
+lan;sigsenirefmpshpmoeshthsrmopotphsshetpom
 end

@@ -20,7 +20,7 @@ def create
 end
 def edit
   @portfolio_item = Portf.find(params[:id])
-  
+
 end
 def update
   @portfolio_item = Portf.find(params[:id])

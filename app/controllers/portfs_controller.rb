@@ -1,4 +1,5 @@
 class PortfsController < ApplicationController
+layout'portf'
 def index
   @portfolio_items = Portf.all
 end
@@ -19,6 +20,7 @@ def create
 end
 def edit
   @portfolio_item = Portf.find(params[:id])
+  
 end
 def update
   @portfolio_item = Portf.find(params[:id])

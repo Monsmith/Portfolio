@@ -1,4 +1,5 @@
 class PortfsController < ApplicationController
+before_action :set_portf_item,only: [:edit, :update, :destroy, :show]
 layout'portf'
 def index
   @portfolio_items = Portf.all
@@ -19,11 +20,8 @@ def create
   end
 end
 def edit
-  @portfolio_item = Portf.find(params[:id])
-
 end
 def update
-  @portfolio_item = Portf.find(params[:id])
 
   respond_to do |format|
     if @portfolio_item.update(portf_params)
@@ -35,12 +33,10 @@ def update
 end
 
 def show
-   @portfolio_item = Portf.find(params[:id])
  end
 
 def destroy
 #Perform the lookup
-  @portfolio_item = Portf.find(params[:id])
   @portfolio_item.destroy
 #Redirect
   respond_to do |format|
@@ -53,5 +49,8 @@ def portf_params
   params.require(:portf).permit(:title,
                                 :subtitle,:body,
                                 technologies_attributes:[:name])
+end
+def set_portf_item
+  @portfolio_item = Portf.find(params[:id])
 end
 end

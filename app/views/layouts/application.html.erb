@@ -14,10 +14,11 @@
       <div class="site-wrapper">
           <div class="site-wrapper-inner">
               <div class="cover-container">
-                  <%=login_helper %>
+
                   <%= render "shared/application_nav" %>
                   <%= yield %>
-                  <%= @copyright %>
+                  <%= render "shared/application_footer" %>
+
                   <%=source_helper("application") %>
               </div>
           </div>

@@ -2,7 +2,7 @@
   <div class="card mb-4 box-shadow">
     <%= image_tag portfolio_item.thumn_image unless portfolio_item.thumn_image.nil? %>
     <div class="card-body">
-      <span class="card-text">
+      <p class="card-text">
         <span><%= link_to portfolio_item.title, portf_show_path(portfolio_item) %></span>
         <%= portfolio_item.subtitle %>
       </p>
@@ -16,7 +16,3 @@
     </div>
   </div>
 </div>
-
-
-
-

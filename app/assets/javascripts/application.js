@@ -12,6 +12,7 @@
 //
 //
 //= require bootstrap-sprockets
+//= require jquery
 //= require rails-ujs
 //= require jquery-ui
 //= require html.sortable

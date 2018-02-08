@@ -1,9 +1,16 @@
 class PortfsController < ApplicationController
 before_action :set_portf_item,only: [:edit, :update, :destroy, :show]
 layout'portf'
-access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
 def index
   @portfolio_items = Portf.by_position
+end
+def sort
+  params[:order].each do |key, value|
+    Portf.find(value[:id]).update(position: value[:position])
+  end
+
+  render nothing: :true
 end
 def new
   @portfolio_item = Portf.new

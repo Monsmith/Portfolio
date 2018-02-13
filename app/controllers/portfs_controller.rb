@@ -56,6 +56,7 @@ private
 def portf_params
   params.require(:portf).permit(:title,
                                 :subtitle,:body,
+                                :main_image,:thumn_image,
                                 technologies_attributes:[:name])
 end
 def set_portf_item

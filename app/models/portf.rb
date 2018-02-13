@@ -5,6 +5,9 @@ class Portf < ApplicationRecord
   include Placeholder
   validates_presence_of :title, :body, :main_image, :thumn_image
 
+  mount_uploader :thumn_image, PortfUploader
+  mount_uploader :main_image, PortfUploader
+
 def self.angular
   where(subtitle:'Angular')
 end

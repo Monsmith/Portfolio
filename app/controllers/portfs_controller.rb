@@ -14,7 +14,6 @@ def sort
 end
 def new
   @portfolio_item = Portf.new
-  3.times{@portfolio_item.technologies.build}
 end
 def create
     @portfolio_item = Portf.new(portf_params)
@@ -57,7 +56,7 @@ def portf_params
   params.require(:portf).permit(:title,
                                 :subtitle,:body,
                                 :main_image,:thumn_image,
-                                technologies_attributes:[:name])
+                                technologies_attributes:[:id,:name, :_destroy])
 end
 def set_portf_item
   @portfolio_item = Portf.find(params[:id])

@@ -37,6 +37,10 @@ module ApplicationHelper
             url:portfs_path,
             title: 'Portfolio'
         },
+        {
+            url:tech_news_path,
+            title: 'Tech News'
+        },
     ]
   end
   def nav_helper style, tag_type
@@ -51,4 +55,13 @@ module ApplicationHelper
   def active? path
     "active" if current_page? path
   end
+end
+def alerts
+  alert = (flash[:alert] || flash[:error] || flash[:notice])
+  if alert
+     alert_generator alert
+  end
+end
+def alert_generator alert
+  js add_gritter(alert, title: "Monsmith", sticky: false)
 end

@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "gritter";
 
 /*
  * Globals
@@ -156,7 +157,7 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 55rem;
+    width: 65rem;
   }
 }
 
@@ -206,4 +207,14 @@ text-align:right;
 .jumbotron {
   background-image: url("Fade-To-Black.jpg");
 
+}
+.tech-news{
+  color: black;
+  margin: 20px;
+}
+.tech-news a{
+  color: green;
+}
+.tech-news >.card {
+  padding: 30px;
 }

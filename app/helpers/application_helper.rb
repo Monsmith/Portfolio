@@ -58,6 +58,6 @@ def alerts
      alert_generator alert
   end
 end
-def alert_generator msg
-  js add_gritter(msg, title: "Monsmith", sticky: false)
+def alert_generator alert
+  js add_gritter(alert, title: "Monsmith", sticky: false)
 end

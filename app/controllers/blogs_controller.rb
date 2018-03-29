@@ -24,6 +24,8 @@ access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :
     @seo_keywords = @blog.body
     else
       redirect_to blogs_path, notice: "You are not authorized to access this page"
+    end
+
   end
 
   # GET /blogs/new
@@ -89,6 +91,6 @@ access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :body)
+      params.require(:blog).permit(:title, :body, :topic_id)
     end
 end

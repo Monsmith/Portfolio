@@ -276,7 +276,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap (~> 4.0.0.beta3)
+  bootstrap
   byebug
   carrierwave (~> 1.0)
   carrierwave-aws (~> 1.3)
